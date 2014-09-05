@@ -29,8 +29,6 @@ Provides rok4 cartridge support to OpenShift
 %__cp -r * %{buildroot}%{cartridgedir}
 
 %files
-%defattr(-,root,root,-)
-%doc
 %dir %{cartridgedir}
 %attr(0755,-,-) %{cartridgedir}/bin/
 %attr(0755,-,-) %{cartridgedir}/conf/

@@ -5,7 +5,7 @@ Version: "0.18.0"
 Versions: ["0.18.0"]
 Website: https://github.com/dimsum12/openshift-rok4-cartridge
 Cartridge-Version: 0.0.1
-Cartridge-Vendor: dimsum12
+Cartridge-Vendor: Worldline
 Categories:
   - service
   - nginx

@@ -2,14 +2,13 @@
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-NGINX_VERSION="1.4.4"
-NGINX_BIN_DIR=$OPENSHIFT_ROK4_DIR/usr/nginx/versions/$NGINX_VERSION/bin
-NGINX_EXEC=$OPENSHIFT_ROK4_DIR/usr/nginx/versions/$NGINX_VERSION/bin/nginx
+NGINX_BIN_DIR=/usr/nginx12-1.2.3/sbin/
+NGINX_EXEC=$NGINX_BIN_DIR/nginx
 NGINX_CONFIG_FILE=$OPENSHIFT_ROK4_DIR/conf/nginx.conf
 NGINX_PID_FILE=$OPENSHIFT_ROK4_DIR/run/nginx.pid
 
-ROK4_BIN_DIR=$OPENSHIFT_ROK4_DIR/usr/rok4/bin
-ROK4_EXEC=$OPENSHIFT_ROK4_DIR/usr/rok4/bin/rok4
+ROK4_BIN_DIR=/usr/bin/
+ROK4_EXEC=$ROK4_BIN_DIR/rok4
 ROK4_CONFIG_FILE=$OPENSHIFT_ROK4_DIR/conf/server.conf
 ROK4_PID_FILE=$OPENSHIFT_ROK4_DIR/run/rok4.pid
 
@@ -18,14 +17,6 @@ function start() {
     echo "Starting Rok4 & Nginx"
 
     if [ -f "$NGINX_EXEC" ]; then
-
-        pushd $ROK4_BIN_DIR
-        find . -type f -exec chmod 755 {} \;
-        popd
-
-        pushd $NGINX_BIN_DIR
-        find . -type f -exec chmod 755 {} \;
-        popd
 
         if [ -f "$OPENSHIFT_REPO_DIR/nginx.conf.erb" ]; then
             oo-erb $OPENSHIFT_REPO_DIR/nginx.conf.erb > $OPENSHIFT_REPO_DIR/nginx.conf
@@ -44,7 +35,7 @@ function start() {
         #[ "$?" == "0" ] && wait_for_pid_file $ROK4_PID_FILE
 
     else
-        echo "WARN: Could not find the compiled application versions/$NGINX_VERSION/bin/nginx, will not start"
+        echo "WARN: Could not find the compiled application versions, will not start"
     fi
 }
 
@@ -113,22 +104,6 @@ function tidy() {
 }
 
 
-function update() {
-    version=${NGINX_VERSION:-1.4.4}
-
-    echo "Rebuilding Nginx v$version"
-    stop
-
-    mkdir -p tmp/build
-    bin/compile tmp/build
-
-    bin_dir="usr/nginx/versions/$version/bin"
-    mkdir -p $bin_dir
-    cp -f tmp/build/out/nginx $bin_dir
-    
-    rm -rf tmp/build
-}
-
 
 case "$1" in
   start)     start ;;
@@ -137,6 +112,5 @@ case "$1" in
   status)    status ;;
   reload)    reload ;;
   tidy)      tidy ;;
-  update)    update ;;
   *)         exit 0
 esac

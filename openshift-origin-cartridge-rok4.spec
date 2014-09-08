@@ -1,12 +1,12 @@
 Name:		openshift-origin-cartridge-rok4	
-Version:	1.0.1
+Version:	1.0.2
 Release:	1%{?dist}
 Summary:	Embedded rok4 support for OpenShift
 
 Group:		Network/Daemons
 License:	CeCILL
 URL:		http://www.openshift.com
-Source0:	https://github.com/messinnicolas/openshift-rok4-cartridge.git
+Source0:	http://mirror.openshift.com/pub/openshift-origin/source/%{name}/%{name}-%{version}.tar.gz
 
 Requires:	rok4	
 Requires:	rubygem(openshift-origin-node)
@@ -32,14 +32,13 @@ Provides rok4 cartridge support to OpenShift
 %dir %{cartridgedir}
 %attr(0755,-,-) %{cartridgedir}/bin/
 %attr(0755,-,-) %{cartridgedir}/conf/
-%attr(0755,-,-) %{cartridgedir}/hooks/
+%attr(0755,-,-) %{cartridgedir}/lib/
 %attr(0755,-,-) %{cartridgedir}/metadata/
+%attr(0755,-,-) %{cartridgedir}/template/
 %doc %{cartridgedir}/README.md
-%doc %{cartridgedir}/COPYRIGHT
-%doc %{cartridgedir}/LICENSE
 
 %changelog
-* Fri Sep 05 2014 Nicolas MESSIN <nicolas.messin@worldline.com> 1.0.1-1
+* Mon Sep 08 2014 Nicolas MESSIN <nicolas.messin@worldline.com> 1.0.2-1
 - new package built with tito
 
 * Tue Sep 04 2014 Nicolas MESSIN <nicolas.messin@worldline.com> 1.0.O

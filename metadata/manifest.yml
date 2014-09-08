@@ -5,16 +5,16 @@ Version: "0.18.0"
 Versions: ["0.18.0"]
 Website: https://github.com/dimsum12/openshift-rok4-cartridge
 Cartridge-Version: 0.0.1
-Cartridge-Vendor: Worldline
+Cartridge-Vendor: worldline
 Categories:
   - service
   - nginx
   - web_framework
   - rok4
 Provides:
-  - nginx-1.4
+  - nginx-1.2
   - nginx
-  - nginx(version) = 1.4.4
+  - nginx(version) = 1.2.0
   - rok4
 Scaling:
   Min: 1
@@ -39,7 +39,7 @@ Subscribes:
     Required: false
 Group-Overrides:
   - components:
-    - nginx-1.4
+    - nginx-1.2
     - web_proxy
 Endpoints:
   - Private-IP-Name:   NGINX_IP

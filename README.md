@@ -8,12 +8,6 @@ Developed by teams [Geoportail](http://geoportail.fr/url/7FFQN5) project of the 
 
 This cartridge is scalable on openshift.
 
-### Installation
-
-To install this cartridge use the cartridge reflector when creating an app
-
-	rhc create-app myapp http://cartreflect-claytondev.rhcloud.com/reflect?github=renaudboulard/openshift-rok4-cartridge
-
 
 ### Configuration
 

@@ -1,7 +1,7 @@
 %global cartridgedir %{_libexecdir}/openshift/cartridges/rok4
 
 Name:		openshift-origin-cartridge-rok4	
-Version:	1.0.1
+Version:	1.0.4
 Release:	1%{?dist}
 Summary:	Embedded rok4 support for OpenShift
 
@@ -37,10 +37,19 @@ Provides rok4 cartridge support to OpenShift
 %attr(0755,-,-) %{cartridgedir}/lib/
 %attr(0755,-,-) %{cartridgedir}/metadata/
 %attr(0755,-,-) %{cartridgedir}/template/
-%attr(0755,-,-) %{cartridgedir}/usr/
+%attr(0755,-,-) %{cartridgedir}/usrrok4/
 %doc %{cartridgedir}/README.md
 
 %changelog
+* Wed Sep 10 2014 Nicolas MESSIN <nicolas.messin@worldline.com> 1.0.4-1
+- Update conf/server.conf.erb path rok4 (nicolas.messin@worldline.com)
+
+* Wed Sep 10 2014 Nicolas MESSIN <nicolas.messin@worldline.com> 1.0.3-1
+- Up server.conf.erb path with /rok4 
+
+* Wed Sep 10 2014 Nicolas MESSIN <nicolas.messin@worldline.com> 1.0.2-1
+- new package built with tito
+
 * Mon Sep 08 2014 Nicolas MESSIN <nicolas.messin@worldline.com> 1.0.1-1
 - new package built with tito
 

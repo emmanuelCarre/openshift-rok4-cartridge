@@ -1,10 +1,10 @@
 Name: rok4
 Cartridge-Short-Name: ROK4
 Display-Name: Rok4 (nginx)
-Version: "0.18.0"
-Versions: ["0.18.0"]
+Version: "0.20.3"
+Versions: ["0.20.3"]
 Website: https://github.com/dimsum12/openshift-rok4-cartridge
-Cartridge-Version: 0.0.1
+Cartridge-Version: 0.0.2
 Cartridge-Vendor: worldline
 Categories:
   - service

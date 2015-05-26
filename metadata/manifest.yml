@@ -1,10 +1,10 @@
 Name: rok4
 Cartridge-Short-Name: ROK4
 Display-Name: Rok4 (nginx)
-Version: "0.20.3"
-Versions: ["0.20.3"]
+Version: "0.22.0"
+Versions: ["0.22.0"]
 Website: https://messinnicolas@github.com/messinnicolas/openshift-rok4-cartridge.git
-Cartridge-Version: 0.0.4
+Cartridge-Version: 0.0.5
 Cartridge-Vendor: worldline
 Categories:
   - service
